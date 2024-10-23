@@ -1,0 +1,4 @@
+<expr> ::= <expr> <expr> <op> | <expr> <uop> | <t>
+<op> ::= + | - | * | /
+<uop> ::= sin | cos | exp | log
+<t> ::= x1 | x2

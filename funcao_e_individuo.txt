@@ -1,0 +1,39 @@
+def twoBody(y, t, tauA, kA, nA, tauB, kB, nB, tauC, kC, nC, tauD, kD, nD, tauE, kEB, kED, kEE, nEB, nED, nEE):
+    ydot = np.empty((5,))
+    
+    ydot[0] = ((1 - (pow((y[4]/maximo_E),nA)/(pow((y[4]/maximo_E),nA)+pow(kA, nA))))-(y[0]/maximo_A)) / tauA
+
+    ydot[1] = (((pow((y[0]/maximo_A), nB))/(pow((y[0]/maximo_A),nB) + pow(kB, nB))) - (y[1]/maximo_B)) / tauB
+
+    ydot[2] = (((pow((y[1]/maximo_B), nC))/(pow((y[1]/maximo_B),nC) + pow(kC, nC))) - (y[2]/maximo_C)) / tauC
+
+    ydot[3] = (((pow((y[2]/maximo_C), nD))/(pow((y[2]/maximo_C),nD) + pow(kD, nD))) - (y[3]/maximo_D)) / tauD
+
+
+    ydot[4] = ((((pow(y[1]/maximo_B, nEB)/(pow(y[1]/maximo_B, nEB) + pow(kEB, nEB)))*(pow(y[3]/maximo_D, nED)/(pow(y[3]/maximo_D, nED) + pow(kED, nED))))+((pow(y[3]/maximo_D, nED)/(pow(y[3]/maximo_D, nED) + pow(kED, nED)))*(pow(y[4]/maximo_E, nEE)/(pow(y[4]/maximo_E, nEE) + pow(kEE, nEE))))) - (y[4]/maximo_E)) / tauE
+ 
+
+    return ydot
+
+
+ind_atual = [1.2163355099083872, 1.1264485098219865, 2.973714367061704, 2.952143123315177, 2.998260518457365, 0.5687249950503857, 0.4580723119903261, 0.46214892372246563, 0.6182568295500336, 0.5213082492659304, 0.7708877748759901, 0.1497642024548283, 4.254757908429968, 3.759370669969996, 4.784173526119725, 10.935884810737809, 24.595975874929724, 2.8109199678182635, 4.922623602327875, 1.804297289687443, 0.6961641316460799, 1.1805067448542073, 3.769380877770944, 0.6268588518301711, 0.7945926074279098, 0.8665901143646684, 1.1631405647512596, 2.3141178250393146, 1.2841062086785697, 0.7091739090057955, 2.245324305294896, 0.8208096283146853, 0.6911548119817139, 0.7874359961268611, 1.101498884676361, 0.7742237807425528, 0.9816157239798934, 70.97756457350062]
+
+    tauA = ind_atual[0]
+    tauB = ind_atual[1]
+    tauC = ind_atual[2]
+    tauD = ind_atual[3]
+    tauE = ind_atual[4]
+    kA = ind_atual[5]
+    kB = ind_atual[6]
+    kC = ind_atual[7]
+    kD = ind_atual[8]
+    kEB = ind_atual[9]
+    kED = ind_atual[10]
+    kEE = ind_atual[11]
+    nA = ind_atual[12]
+    nB = ind_atual[13]
+    nC = ind_atual[14]
+    nD = ind_atual[15]
+    nEB = ind_atual[16]
+    nED = ind_atual[17]
+    nEE = ind_atual[18]
